@@ -6,8 +6,8 @@ set net{{ INTERFACE_ID }}/netmask {{ NETMASK }}
 set net{{ INTERFACE_ID }}/gateway {{ PUBLIC_GW }}
 set net{{ INTERFACE_ID }}/dns 8.8.8.8
 
-set nfs_server MY_NFS_ADDRESS # MY_NFS_ADDRESS should be replaced with a public ip from an nfs server that provides the available installation files.
-set nfs_path MY_NFS_PATH # MY_NFS_PATH should be replaced with the directory path containing the installation files.
+set nfs_server 10.70.0.187 # MY_NFS_ADDRESS should be replaced with a public ip from an nfs server that provides the available installation files.
+set nfs_path /ubuntu22 # MY_NFS_PATH should be replaced with the directory path containing the installation files.
 
 kernel nfs://${nfs_server}:${nfs_path}/casper/vmlinuz || read void
 initrd nfs://${nfs_server}:${nfs_path}/casper/initrd || read void
